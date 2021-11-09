@@ -1,4 +1,4 @@
-# Java-EPAM 1
+# Java-EPAM HW 1
 Task 1.
 For a given integer n calculate the value which is equal to a:
 •  squared number, if its value is strictly positive;
