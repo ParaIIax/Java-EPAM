@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class Task3 {
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 4, 5};
+        int [] arr = {1, 2, 3, 4, 5};
         int len = arr.length;
         if(IsSorted(arr, len, SortOrder.ASCENDING)){
             System.out.println("Array is sorted");
@@ -13,7 +13,7 @@ public class Task3 {
         }
         Transform(arr, len, SortOrder.ASCENDING);
         System.out.println();
-        System.out.println(MultArithmeticElements(5, 3, 4));
+        System.out.println(MultiArithmeticElements(5, 3, 4));
         System.out.println(SumGeometricElements(100, 0.5));
     }
     //Task 1
@@ -45,11 +45,11 @@ public class Task3 {
         return 0;
     }
     //Task 3
-    private static int MultArithmeticElements(int a1, int t, int n){
+    private static int MultiArithmeticElements(int a1, int t, int n){
         if (n == 0){
             return 1;
         }
-        return a1 * MultArithmeticElements(a1 + t, t, --n);
+        return a1 * MultiArithmeticElements(a1 + t, t, --n);
     }
     //Task 4
     private static double SumGeometricElements(double a1, double t){
@@ -60,7 +60,7 @@ public class Task3 {
         }
         else
             throw new IllegalArgumentException();
-        return a1 + SumGeometricElements((double) (a1 * t), t);
+        return a1 + SumGeometricElements((a1 * t), t);
     }
 }
 /*Task 1.  
