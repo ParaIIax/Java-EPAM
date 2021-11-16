@@ -1,23 +1,23 @@
-package ua.univer.task3;
+package main.java.ua.univer.task3;
+
 import javax.swing.*;
+import java.util.Arrays;
 
 public class Task3 {
     public static void main(String[] args) {
         int [] arr = {1, 2, 3, 4, 5};
-        int len = arr.length;
-        if(IsSorted(arr, len, SortOrder.ASCENDING)){
-            System.out.println("Array is sorted");
+        if(IsSorted(arr, arr.length, SortOrder.DESCENDING)){
+            System.out.println("Array is sorted in the given order");
         }
         else {
-            System.out.println("Array is not sorted");
+            System.out.println("Array is not sorted in the given order");
         }
-        Transform(arr, len, SortOrder.ASCENDING);
-        System.out.println();
+        System.out.println(Arrays.toString(Transform(arr, arr.length, SortOrder.ASCENDING)));
         System.out.println(MultiArithmeticElements(5, 3, 4));
         System.out.println(SumGeometricElements(100, 0.5));
     }
     //Task 1
-    private static boolean IsSorted(int[] arr, int len, SortOrder order){
+    public static boolean IsSorted(int[] arr, int len, SortOrder order){
         if (len == 1 || len == 0)
             return true;
         if (order == SortOrder.ASCENDING) {
@@ -33,26 +33,26 @@ public class Task3 {
         return true;
     }
     //Task 2
-    private static int Transform(int[] arr, int len, SortOrder order){
+    public static int [] Transform(int[] arr, int len, SortOrder order){
         if(IsSorted(arr, len, order)){
-            if (len != 0) {
-                System.out.print(len - 1 + arr[len - 1] + Transform(arr, --len, order) + " ");
+            for (; len != 0; --len) {
+                arr[len - 1] = len - 1 + arr[len - 1];
             }
         }
         else {
-            System.out.println("Array is not sorted");
+            System.out.println("Array is not sorted in the given order");
         }
-        return 0;
+        return arr;
     }
     //Task 3
-    private static int MultiArithmeticElements(int a1, int t, int n){
+    public static int MultiArithmeticElements(int a1, int t, int n){
         if (n == 0){
             return 1;
         }
         return a1 * MultiArithmeticElements(a1 + t, t, --n);
     }
     //Task 4
-    private static double SumGeometricElements(double a1, double t){
+    public static double SumGeometricElements(double a1, double t){
         if (0 < t && t < 1) {
             if (a1 != (int) a1) {
                 return 0;
