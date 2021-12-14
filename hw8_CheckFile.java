@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Locale;
 
 public class CheckFile {
-    
     public static String frequentWords(String text) {
         text = text.replaceAll("[^\sA-Za-zА-Яа-я0-9]", "");
         String[] words = text.split(" ");
