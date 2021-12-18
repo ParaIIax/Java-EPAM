@@ -6,7 +6,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import ua.univer.finTask.business_logic.City;
 import ua.univer.finTask.business_logic.Country;
-
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -229,5 +228,4 @@ public class DAL {
             e.printStackTrace(System.out);
         }
     }
-
 }
