@@ -23,30 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAL {
-    public static Document getDocument(String filename) {
-        DocumentBuilderFactory dbf = null;
-        DocumentBuilder db = null;
-        try {
-            dbf = DocumentBuilderFactory.newInstance();
-            db = dbf.newDocumentBuilder();
-        }
-        catch (ParserConfigurationException ex) { }
-        Document document = null;
-        try {
-            DocumentBuilder parser = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            document = parser.parse(filename);
-            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Source schemaFile = new StreamSource("mySchema.xsd");
-            Schema schema = factory.newSchema(schemaFile);
-            Validator validator = schema.newValidator();
-            validator.validate(new DOMSource(document));
-
-        } catch (ParserConfigurationException e) { }
-        catch (SAXException e) { }
-        catch (IOException e) { }
-        return document;
-    }
-
     public static List<Country> getCountriesList(Document document) {
         List<Country> countries = new ArrayList<>();
         Element root = document.getDocumentElement();
@@ -214,6 +190,30 @@ public class DAL {
             }
         }
         DAL.writeDocument(document);
+    }
+    
+    public static Document getDocument(String filename) {
+        DocumentBuilderFactory dbf = null;
+        DocumentBuilder db = null;
+        try {
+            dbf = DocumentBuilderFactory.newInstance();
+            db = dbf.newDocumentBuilder();
+        }
+        catch (ParserConfigurationException ex) { }
+        Document document = null;
+        try {
+            DocumentBuilder parser = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            document = parser.parse(filename);
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Source schemaFile = new StreamSource("mySchema.xsd");
+            Schema schema = factory.newSchema(schemaFile);
+            Validator validator = schema.newValidator();
+            validator.validate(new DOMSource(document));
+
+        } catch (ParserConfigurationException e) { }
+        catch (SAXException e) { }
+        catch (IOException e) { }
+        return document;
     }
 
     public static void writeDocument(Document document) throws TransformerFactoryConfigurationError {
