@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="WINDOWS-1251" standalone="no"?><Map>
+    <Country ID="1" name="Russia">
+        <City ID="1" count="11000000" iscap="true" name="Moscow"/>
+        <City ID="2" count="850000" iscap="false" name="Vladivostok"/>
+        <City ID="3" count="500000" iscap="false" name="Voronezh"/>
+    </Country>
+    <Country ID="2" name="Ukraine">
+        <City ID="4" count="4000000" iscap="true" name="Kiev"/>
+        <City ID="5" count="1000000" iscap="false" name="Lvov"/>
+        <City ID="6" count="1100000" iscap="false" name="Kharkov"/>
+    </Country>
+    <Country ID="3" name="Italy">
+        <City ID="7" count="5000000" iscap="true" name="Rome"/>
+        <City ID="8" count="3500000" iscap="false" name="Fines"/>
+    </Country>
+    <Country ID="4" name="Germany">
+        <City ID="9" count="4000000" iscap="true" name="Berlin"/>
+        <City ID="10" count="3100000" iscap="false" name="Munches"/>
+    </Country>
+</Map>
