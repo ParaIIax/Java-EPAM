@@ -6,7 +6,6 @@ import ua.univer.finTask.business_logic.City;
 import ua.univer.finTask.business_logic.Country;
 import ua.univer.finTask.business_logic.MyBusinessLogic;
 import ua.univer.finTask.data_access.DAL;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
@@ -114,7 +113,6 @@ public class ConsoleMenu {
             }
         }
     }
-
     private static void meinMenu() {
         System.out.println("\n1. Show all countries and cities;" +
                 "\n2. Add country;" +
@@ -129,5 +127,5 @@ public class ConsoleMenu {
                 "\n11. Show all cities belonging to a country with a given code;" +
                 "\n12. Exit.");
     }
-
+    
 }
