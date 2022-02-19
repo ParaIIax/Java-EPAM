@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Cities>
+    <City>
+        <name>London</name>
+        <ID>1</ID>
+    </City>
+    <City>
+        <name>Tokyo</name>
+        <ID>2</ID>
+    </City>
+    <City>
+        <name>Philadelphia</name>
+        <ID>3</ID>
+    </City>
+    <City>
+        <name>Kiev</name>
+        <ID>4</ID>
+    </City>
+</Cities>
