@@ -1,0 +1,27 @@
+[
+  {
+    "cityID":9,
+    "cityName":"Washington"
+  },
+  {"cityID":8,
+    "cityName":"Rome"
+  },
+  {"cityID":6,
+    "cityName":"New York"
+  },
+  {"cityID":5,
+    "cityName":"Paris"
+  },
+  {"cityID":4,
+    "cityName":"Kiev"
+  },
+  {"cityID":3,
+    "cityName":"Philadelphia"
+  },
+  {"cityID":2,
+    "cityName":"Tokyo"
+  },
+  {"cityID":1,
+    "cityName":"London"
+  }
+]
