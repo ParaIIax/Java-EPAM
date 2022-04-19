@@ -3,7 +3,7 @@ package ua.advanced.task4;
 public class Part3 {
     private int counter;
     private int counter2;
-
+    
     public void compare() {
         if (counter > counter2)
             System.out.println("counter > counter2");
@@ -20,60 +20,64 @@ public class Part3 {
         ++counter2;
     }
 
-    public synchronized void compareSync() {
-        if (counter > counter2)
-            System.out.println("counter > counter2");
-        else if (counter < counter2)
-            System.out.println("counter < counter2");
-        else
-            System.out.println("counter = counter2");
-        ++counter;
+    private static Object obj = new Object();
+
+    public void compareSync() {
+        synchronized (obj) {
+            compare();
+        }
+    }
+    
+    
+    public static void main(String[] args) {
+        Part3 example = new Part3();
+        System.out.println("Not synchronized:");
+        SyncController syncController = new SyncController(example, false);
+        SyncController syncController1 = new SyncController(example, false);
+        SyncController syncController2 = new SyncController(example, false);
+
         try {
-            Thread.sleep(100);
+            syncController.th.join();
+            syncController1.th.join();
+            syncController2.th.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        ++counter2;
+
+        System.out.println("Synchronized:");
+        SyncController syncController3 = new SyncController(example, true);
+        SyncController syncController4 = new SyncController(example, true);
+        SyncController syncController5 = new SyncController(example, true);
+
+        try {
+            syncController3.th.join();
+            syncController4.th.join();
+            syncController5.th.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void main(String[] args) {
-        Part3 target = new Part3();
-        Thread th1, th2, th3;
-        System.out.println("Not synchronized:");
-        th1 = new Thread(target::compare);
-        th2 = new Thread(target::compare);
-        th3 = new Thread(target::compare);
-        th1.start();
-        th2.start();
-        th3.start();
+}
 
-        try {
-            th1.join();
-            th2.join();
-            th3.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+class SyncController implements Runnable {
+    Part3 example;
+    Thread th;
+    boolean sync;
 
-        Thread th4, th5, th6;
-        System.out.println("Synchronized:");
-        th4 = new Thread(target::compareSync);
-        th5 = new Thread(target::compareSync);
-        th6 = new Thread(target::compareSync);
-        th4.start();
-        th5.start();
-        th6.start();
+    public SyncController(Part3 example, boolean sync) {
+        this.example = example;
+        this.sync = sync;
+        th = new Thread(this);
+        th.start();
+    }
 
-        try {
-            th1.join();
-            th2.join();
-            th3.join();
-            th4.join();
-            th5.join();
-            th6.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public void run() {
+        if (sync)
+            example.compareSync();
+        else
+            example.compare();
     }
 
 }
