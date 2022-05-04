@@ -1,3 +1,5 @@
+package ua.advanced.task6;
+
 import java.util.ArrayList;
 import java.util.List;
 
