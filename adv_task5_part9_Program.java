@@ -7,4 +7,5 @@ public class Program {
         Auction auction = new Auction(lots, numberOfParticipants);
         auction.startAuction();
     }
+    
 }
