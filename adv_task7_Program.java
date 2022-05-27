@@ -112,10 +112,6 @@ public class Program {
             return fullname;
         }
 
-        public int getBirth_date() {
-            return birth_date;
-        }
-
         @Override
         public String toString() {
             return id + " " + fullname + " " + birth_date;
