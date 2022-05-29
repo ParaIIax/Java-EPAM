@@ -1,6 +1,5 @@
 package ua.advanced.task8.Enities;
 
-//Entity
 public abstract class Entity {
     private int id;
 
