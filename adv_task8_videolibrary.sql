@@ -53,3 +53,4 @@ INSERT INTO `film_producers` (film_id, producer_fullname) VALUES (2, 'Vasya 1');
 INSERT INTO `film_producers` (film_id, producer_fullname) VALUES (3, 'Vasya 4');
 INSERT INTO `film_producers` (film_id, producer_fullname) VALUES (4, 'Alex 5');
 INSERT INTO `film_producers` (film_id, producer_fullname) VALUES (5, 'Vasya 3');
+INSERT INTO `film_producers` (film_id, producer_fullname) VALUES (6, 'Vasya 99');
