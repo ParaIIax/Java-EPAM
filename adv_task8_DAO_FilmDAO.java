@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-//FilmDAO
 public class FilmDAO extends AbstractDAO<Integer, Film> {
     private static final String SELECT_ALL_FILMS =
             "SELECT * FROM films";
