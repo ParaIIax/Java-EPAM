@@ -1,6 +1,5 @@
 package ua.advanced.task8.Enities;
 
-//Actor
 public class Actor extends Entity {
     private String full_name;
     private int birth_date;
