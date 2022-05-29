@@ -8,7 +8,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//ActorDAO
 public class ActorDAO extends AbstractDAO<Integer, Actor> {
     private static final String SELECT_ALL_ACTORS =
             "SELECT * FROM actors";
