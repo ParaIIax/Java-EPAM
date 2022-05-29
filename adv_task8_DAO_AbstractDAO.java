@@ -43,4 +43,3 @@ public abstract class AbstractDAO <K, T extends Entity> {
     }
 
 }
-
