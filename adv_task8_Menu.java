@@ -9,7 +9,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
-//Menu
 public class Menu {
     private final static String[] MAIN_OPTIONS =
             { "1 - choose entity",
