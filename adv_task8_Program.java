@@ -6,7 +6,6 @@ import ua.advanced.task8.DAO.FilmDAO;
 
 import java.sql.SQLException;
 
-//Program
 public class Program {
     public static void main(String args[]) throws SQLException {
         var connectionPool = BasicConnectionPool.create(
