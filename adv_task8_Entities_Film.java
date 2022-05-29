@@ -1,6 +1,5 @@
 package ua.advanced.task8.Enities;
 
-//Film
 public class Film extends Entity {
     private String name;
     private int release_date;
